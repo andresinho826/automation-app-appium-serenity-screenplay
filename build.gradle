@@ -1,0 +1,56 @@
+plugins {
+    id("java")
+    id("idea")
+    id  "net.serenity-bdd.serenity-gradle-plugin" version "3.7.0"
+}
+
+group = "automation-frisby-test-app"
+version = "1.0-SNAPSHOT"
+
+repositories {
+    mavenCentral()
+}
+sourceCompatibility = 17
+ext {
+
+    serenityCoreVersion = '3.9.8'
+    junitVersion = '5.6.0'
+    assertJVersion = '3.22.0'
+    logbackVersion = '1.4.14'
+
+}
+
+
+dependencies {
+    implementation 'net.serenity-bdd:serenity-screenplay:3.9.8'
+    implementation 'net.serenity-bdd:serenity-screenplay-webdriver:3.9.8'
+    implementation 'io.github.cdimascio:dotenv-java:3.0.0'
+    implementation 'com.googlecode.json-simple:json-simple:1.1.1'
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.14.2'
+    testImplementation platform('org.junit:junit-bom:5.9.2')
+    implementation 'io.appium:java-client:8.5.0'
+    implementation 'org.seleniumhq.selenium:selenium-java:4.9.1'
+    implementation group: 'io.github.cdimascio', name: 'java-dotenv', version: '5.2.2'
+    implementation group: 'org.mongodb', name: 'mongodb-driver-sync', version: '4.9.1'
+
+
+    testImplementation "net.serenity-bdd:serenity-junit5:${serenityCoreVersion}",
+            "net.serenity-bdd:serenity-ensure:${serenityCoreVersion}",
+            "net.serenity-bdd:serenity-cucumber:${serenityCoreVersion}",
+            "org.junit.jupiter:junit-jupiter-api:${junitVersion}",
+            "org.assertj:assertj-core:${assertJVersion}",
+            "net.serenity-bdd:serenity-core:${serenityCoreVersion}",
+            "ch.qos.logback:logback-classic:${logbackVersion}"
+    "net.serenity-bdd:serenity-browserstack:${serenityCoreVersion}"
+    testImplementation "junit:junit:4.13.2"
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:${junitVersion}"
+}
+
+//tasks.test {
+//    useJUnitPlatform()
+//}
+
+test {
+    testLogging.showStandardStreams = true
+    systemProperties System.getProperties()
+}
