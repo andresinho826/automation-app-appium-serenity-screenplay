@@ -9,4 +9,3 @@ Feature: Inicio sesion de usuarios en la app Frisby
     Examples:
       | usuario              | contrasena    |
       | andresqa91@gmail.com | contrasena123 |
-

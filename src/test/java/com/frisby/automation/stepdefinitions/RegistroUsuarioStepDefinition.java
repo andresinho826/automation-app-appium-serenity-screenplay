@@ -16,7 +16,7 @@ import java.util.Map;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static org.hamcrest.core.IsEqual.equalTo;
 
-public class RegistroUsuarioStepDefinitions {
+public class RegistroUsuarioStepDefinition {
 
     @Given("que el usuario está en la pantalla de Registrarse")
     public void queElUsuarioEstaEnLaPantallaDeRegistrarse() {
@@ -26,6 +26,8 @@ public class RegistroUsuarioStepDefinitions {
         );
     }
 
+
+    // ESTA PARTE SE PODRIA MEJORAR PARA NO VER LA PARTE DE LA LOGICA AQUI........
     @When("ingresa los datos del formulario:")
     public void ingresaLosDatosDelFormulario(DataTable dataTable) {
         // Tomamos la primera fila de la tabla como Map<String, String>
@@ -51,7 +53,6 @@ public class RegistroUsuarioStepDefinitions {
     @When("hace clic en el botón Registrar")
     public void haceClicEnElBotónRegistrar() {
         OnStage.theActorInTheSpotlight().attemptsTo(
-                //RegistrarUsuario.hacerClicEn(boton)
         );
     }
 

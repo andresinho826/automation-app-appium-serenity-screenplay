@@ -1,8 +1,10 @@
 Feature: Compra de producto en la app Frisby
 
-  Scenario: Agregar un combo al carrito y confirmar pedido
+  Background: Usuario autenticado
     Given que el usuario ha iniciado sesión correctamente
     And está en la Home page
+
+  Scenario: Agregar un combo al carrito y confirmar pedido
     When da click en el botón domicilio
     And selecciona la dirección
     And selecciona una categoría

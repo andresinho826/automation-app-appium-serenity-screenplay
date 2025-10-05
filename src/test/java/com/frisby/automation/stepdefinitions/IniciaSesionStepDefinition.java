@@ -2,17 +2,13 @@ package com.frisby.automation.stepdefinitions;
 
 import com.frisby.automation.tasks.IniciarSesion;
 import com.frisby.automation.ui.IniciaSesionPage;
-import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.ensure.Ensure;
 
-import java.util.List;
-import java.util.Map;
-
-public class IniciaSesionStepDefinitions {
+public class IniciaSesionStepDefinition {
 
     @Given("que el usuario está en la pantalla de Inicio de sesion")
     public void queElUsuarioEstaEnLaPantallaDeInicioDeSesion() {

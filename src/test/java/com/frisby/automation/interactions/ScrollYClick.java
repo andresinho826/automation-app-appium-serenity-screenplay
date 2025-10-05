@@ -27,14 +27,6 @@ public class ScrollYClick implements Interaction {
         this.maxScrolls = maxScrolls;
     }
 
-    public ScrollYClick(Target elemento) {
-        this(elemento, 10);
-    }
-
-    public static ScrollYClick en(Target elemento) {
-        return Tasks.instrumented(ScrollYClick.class, elemento);
-    }
-
     public static ScrollYClick en(Target elemento, int maxScrolls) {
         return Tasks.instrumented(ScrollYClick.class, elemento, maxScrolls);
     }

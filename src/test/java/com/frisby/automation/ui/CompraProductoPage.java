@@ -8,8 +8,16 @@ public class CompraProductoPage {
     public static final Target BTN_DOMICILIO = Target.the("botón domicilio")
             .located(By.id("com.frisby.frisby:id/butNuevoPedido"));
 
+
+
+
+    public static final Target VALIDA_DIRECCION = Target.the("seleccionar dirección")
+            .located(By.xpath("(//android.widget.ListView[@resource-id='com.frisby.frisby:id/listViewDirecciones'])[1]/android.widget.LinearLayout"));
+
     public static final Target SELECT_DIRECCION = Target.the("seleccionar dirección")
             .located(By.id("com.frisby.frisby:id/checkBoxDirecciones"));
+    // ID = com.frisby.frisby:id/checkBoxDirecciones
+    // classname = android.widget.CheckBox
 
 
     // pop up horario_de_atencion
@@ -32,7 +40,7 @@ public class CompraProductoPage {
 
 
     public static final Target SELECT_ACOMPANIANTE_BEBIDA = Target.the("seleccionar acompañante bebida")
-            .located(By.xpath("(//android.widget.RadioButton[@resource-id='com.frisby.frisby:id/radioDiviDeta'])[1]"));
+            .located(By.xpath("//android.widget.TextView[@resource-id='com.frisby.frisby:id/txtNombreDiviDetaRadio' and @text='Pepsi (400 ml)']"));
 
     public static final Target SELECT_ACOMPANIANTE_SALSA_SOBRES = Target.the("seleccionar acompañante salsa sobres")
             .located(By.xpath("(//android.widget.RadioButton[@resource-id='com.frisby.frisby:id/radioDiviDeta'])[4]"));
@@ -50,6 +58,15 @@ public class CompraProductoPage {
     // pop up horario_de_atencion
     // id = com.frisby.frisby:id/confirm_button
 
+    // Esperar unos segundos para ver el mensaje y luego click
     public static final Target TXT_CONFIRMACION = Target.the("mensaje de confirmación del pedido")
+            .located(By.id("com.frisby.frisby:id/title_text"));
+
+
+    public static final Target BTN_ACEPTAR_PEDIDO_ENVIADO_CON_EXITO = Target.the("boton aceptar - pedido enviado con exito")
             .located(By.id("com.frisby.frisby:id/confirm_button"));
+
+
+
+
 }
